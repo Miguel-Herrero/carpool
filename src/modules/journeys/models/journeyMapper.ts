@@ -7,7 +7,7 @@ export class JourneyMapper {
       id: journey.id,
       people: journey.people,
       car: undefined,
-    }
+    };
   }
 
   public static toDTO(journey: Journey): JourneyDTO {
