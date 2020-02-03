@@ -4,11 +4,12 @@ import { createExpressServer } from 'routing-controllers';
 import { Container } from 'typedi';
 import { useContainer as useContainerRoutingControllers } from 'routing-controllers';
 
-import { CarController } from './modules/cars/carController';
+import { CarController } from './api/cars/carController';
+import { JourneyController } from './api/journeys/journeysController';
 
 // Creates express app, registers all controller routes and returns you express app instance
 const app: express.Application = createExpressServer({
-  controllers: [CarController],
+  controllers: [CarController, JourneyController],
 });
 
 app.use(express.json());
