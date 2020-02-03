@@ -14,7 +14,9 @@ It is a showcase/demo of:
 - You can create cars at `PUT /cars` (see `src/api/README.md` for body format)
 - You can create journeys (and see what car is assigned) at `POST /journeys` (see [`src/api/README.md`](./src/api/) for body format).
 
-# Things pending to develo
+# Things pending to develop
 - [ ] Move DB out from Repository to Infrastructure layer.
 - [ ] Create Mappers for each module to convert from/to Domain, DTO, Persistence.
 - [ ] Make Use Cases return `Result` type, instead of Promises. This would unify handling errors and type of results.
+- [ ] Tests by mocking dependencies, instead of using tools like Sinon to stub/mock them.
+- [ ] Implement `GET /status`, and Dropoff business logic.

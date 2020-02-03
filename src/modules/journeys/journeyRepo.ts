@@ -6,6 +6,7 @@ import { CAR_REPO_IMPL, CarRepository } from '../cars/carRepo';
 
 export const JOURNEY_REPO_IMPL = 'JOURNEY_REPO_IMPL';
 
+// TODO Move this in-memory database out from the Repository
 let _journeys = {};
 
 export interface JourneyRepository {
@@ -19,6 +20,7 @@ class JourneyRepositoryImpl implements JourneyRepository {
   private carRepo: CarRepository;
 
   async saveJourney(journey: JourneyDTO): Promise<Journey> {
+    // TODO: Call the DB method, instead of having it inside the Repo.
     _journeys = {
       ..._journeys,
       [journey.id]: journey,
@@ -28,6 +30,7 @@ class JourneyRepositoryImpl implements JourneyRepository {
   }
 
   async assignCarToJourney(journeyToAssign: Journey, carToAssign: Car): Promise<void> {
+    // TODO: Call the DB method, instead of having it inside the Repo.
     const journey = _journeys[journeyToAssign.id];
     journey.car = carToAssign.id;
 
